@@ -1,0 +1,24 @@
+{
+  "name": "Mor's Chihuahua Takeover",
+  "version": "1.0",
+  "description": "Replace every image on the page with a Chihuahua.",
+  "manifest_version": 2,
+  "icons": {
+    "16": "images/chi16.png",
+    "32": "images/chi32.png",
+    "48": "images/chi48.png",
+    "128": "images/chi128.png"
+  },
+  "background": {
+    "scripts": ["scripts/background.js"],
+    "persistent": false
+  },
+  "web_accessible_resources": ["images/*.jpg"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "all_frames": true,
+      "js": ["scripts/contentScript.js"]
+    }
+  ]
+}
